@@ -1,42 +1,134 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  // NOTE: When using postgresql, mysql or sqlserver, uncomment the @db.Text annotations in model Account below
-  // Further reading:
-  // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
-  // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
-  url      = env("DATABASE_URL")
+model Dao {
+  id            String     @id @default(cuid())
+  name          String?
+  slug          String     @unique
+  tagline       String?
+  mission       String?    @db.LongText
+  values        String?    @db.LongText
+  token         Json?
+  tokenSymbol   String?
+  tokenAddress  String?
+  description   String?    @db.LongText
+  emoji         String?
+  logoUrl       String?    @db.Text
+  logoBlurhash  String?    @db.LongText
+  imageUrl      String?    @db.Text
+  imageBlurhash String?    @db.LongText
+  status        String?
+  twitter       String?
+  discord       String?
+  mirror        String?
+  website       String?
+  email         String?
+  approved      Boolean    @default(false)
+  featured      Boolean    @default(false)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  users         DaoUser[]
+  admins        DaoAdmin[]
+  categories    Category[]
 }
 
-model Example {
+model Category {
+  id            String   @id @default(cuid())
+  name          String?
+  slug          String   @unique
+  description   String?  @db.LongText
+  imageUrl      String?  @db.Text
+  imageBlurhash String?  @db.LongText
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  daos          Dao[]
+}
+
+model User {
+  id              String     @id @default(cuid())
+  position        Int?
+  name            String?
+  twitterUsername String?    @unique
+  username        String?    @unique
+  wallet          String?    @unique
+  ens             String?    @unique
+  nonce           String?
+  foundingMember  Boolean    @default(false)
+  email           String?    @unique
+  emailVerified   DateTime?
+  image           String?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  accounts        Account[]
+  sessions        Session[]
+  daos            DaoUser[]
+  adminDaos       DaoAdmin[]
+  referrerId      String?
+  referrer        User?      @relation("ReferralNetwork", fields: [referrerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  referrals       User[]     @relation("ReferralNetwork")
+}
+
+model DaoUser {
+  id        String    @id @default(cuid())
+  dao       Dao       @relation(fields: [daoId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
+  daoId     String
+  userId    String
+  role      String    @default("member")
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  @@unique([daoId, userId], name: "dao_user_constraint")
+  @@index([daoId])
+  @@index([userId])
+}
+
+model DaoAdmin {
   id        String   @id @default(cuid())
+  dao       Dao      @relation(fields: [daoId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  daoId     String
+  userId    String
+  role      String   @default("Contributor")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([daoId, userId], name: "dao_admin_constraint")
+  @@index([daoId])
+  @@index([userId])
 }
 
-// Necessary for Next auth
 model Account {
-  id                String  @id @default(cuid())
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String? // @db.Text
-  access_token      String? // @db.Text
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String? // @db.Text
-  session_state     String?
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([userId])
 }
 
 model Session {
@@ -45,16 +137,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
 
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
+  @@index([userId])
 }
 
 model VerificationToken {

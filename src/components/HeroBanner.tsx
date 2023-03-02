@@ -1,7 +1,9 @@
-import { FC } from "react";
-import { AiFillGithub } from "react-icons/ai";
-import { BsTwitter } from "react-icons/bs";
-import { FaDiscord } from "react-icons/fa";
+// import { AiFillGithub } from "react-icons/ai";
+// import { BsTwitter } from "react-icons/bs";
+// import { FaDiscord } from "react-icons/fa";
+// import { VscTools } from "react-icons/vsc";
+import type { FC } from "react";
+import { SearchBar } from "./SearchBar";
 
 const Navbar: FC = () => {
   return (
@@ -17,9 +19,13 @@ const Navbar: FC = () => {
                 Deep dive into the world of Open Source Projects, Decentralized
                 Autonomous Organizations and the next generation of communities.
               </div>
-              <div className="group mt-10 flex flex-row gap-4">
+              <div className="mt-10">
+                <SearchBar />
+              </div>
+
+              {/* <div className="group mt-10 flex flex-row gap-4">
                 <div className="rounded-2xl bg-slate-600 p-4">
-                  <AiFillGithub className="h-14 w-14 text-white" />
+                  <VscTools className="h-14 w-14 text-white" />
                 </div>
                 <div className="rounded-2xl bg-slate-600 p-4">
                   <FaDiscord className="h-14 w-14 text-[#5865F2]" />
@@ -33,7 +39,7 @@ const Navbar: FC = () => {
                     className="h-12 w-12 text-[#2081E2]"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
 
-const Navbar: FC = () => {
+export const Navbar: FC = () => {
   return (
     <div className="flex items-center justify-between gap-4 py-10 px-24">
       <div className="flex flex-row gap-3">
-        <img src="/img/logo.png" className="flex h-7 w-7 " />
-        <div className="font-sans text-2xl font-bold text-white">Versr</div>
+        {/* <img src="/img/logo.png" className="flex h-7 w-7 " /> */}
+        <div className="font-sans text-2xl font-bold text-white">DCentral</div>
       </div>
       <div className="flex flex-row gap-10 font-inter">
         <div className="text-sm text-slate-500">Home</div>
@@ -22,5 +22,3 @@ const Navbar: FC = () => {
     </div>
   );
 };
-
-export default Navbar;

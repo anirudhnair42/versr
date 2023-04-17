@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Carousel } from "../components/Carousel";
 // import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";

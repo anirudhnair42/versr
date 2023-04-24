@@ -5,11 +5,12 @@ import Head from "next/head";
 import { trpc } from "../utils/trpc";
 import HeroBanner from "../components/HeroBanner";
 import { Navbar } from "../components/Navbar";
-import { DCard } from "../components/DCard";
 
 const Home: NextPage = () => {
   const { data: daos, isLoading } = trpc.daos.getAll.useQuery();
-  const top5Daos = daos?.slice(0, 5);
+  const top5Daos = daos?.slice(0, 3);
+
+  // Get All Guilds basic information
 
   return (
     <>
@@ -21,25 +22,9 @@ const Home: NextPage = () => {
       <main className="flex min-h-screen flex-col bg-neutral-900">
         <Navbar />
         <HeroBanner />
-        <div className="p-4 text-center font-sans text-4xl text-white">
-          Trending Projects
-        </div>
+
         <div>
-          <div className="mx-16 mb-10 flex items-center justify-center">
-            {!!isLoading && <div>Loading...</div>}
-            {!isLoading &&
-              top5Daos?.map((dao) => {
-                return (
-                  <DCard
-                    key={dao.id}
-                    title={dao.name ?? ""}
-                    description={dao.description ?? ""}
-                    image={dao.imageUrl ?? ""}
-                    blurDataURL={dao.imageBlurhash ?? ""}
-                  />
-                );
-              })}
-          </div>
+          <div className="mx-16 mb-10 flex items-start justify-center gap-5"></div>
         </div>
       </main>
     </>

@@ -5,11 +5,11 @@ export const BackgroundSVG = () => (
     viewBox="0 0 1512 1140"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="bg fixed inset-0 z-0 flex w-full items-center justify-center"
+    className="bg fixed inset-0 flex w-full items-center justify-center"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M87 457C68.215 457 53 472.141 53 490.835C53 505.807 62.7325 518.452 76.2475 522.935C77.9475 523.231 78.585 522.216 78.585 521.328C78.585 520.525 78.5425 517.86 78.5425 515.027C70 516.591 67.79 512.954 67.11 511.051C66.7275 510.078 65.07 507.075 63.625 506.272C62.435 505.637 60.735 504.073 63.5825 504.03C66.26 503.988 68.1725 506.483 68.81 507.498C71.87 512.616 76.7575 511.178 78.7125 510.29C79.01 508.09 79.9025 506.61 80.88 505.764C73.315 504.918 65.41 502 65.41 489.058C65.41 485.379 66.7275 482.334 68.895 479.965C68.555 479.119 67.365 475.651 69.235 470.999C69.235 470.999 72.0825 470.111 78.585 474.467C81.305 473.706 84.195 473.325 87.085 473.325C89.975 473.325 92.865 473.706 95.585 474.467C102.088 470.069 104.935 470.999 104.935 470.999C106.805 475.651 105.615 479.119 105.275 479.965C107.442 482.334 108.76 485.337 108.76 489.058C108.76 502.042 100.813 504.918 93.2475 505.764C94.48 506.822 95.5425 508.852 95.5425 512.024C95.5425 516.549 95.5 520.186 95.5 521.328C95.5 522.216 96.1375 523.274 97.8375 522.935C104.587 520.668 110.452 516.351 114.607 510.593C118.762 504.834 120.998 497.924 121 490.835C121 472.141 105.785 457 87 457Z"
       fill="white"
     />
@@ -19,8 +19,8 @@ export const BackgroundSVG = () => (
     />
     <rect x="200" y="196" width="73" height="70" fill="url(#pattern0)" />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M281 766C281 742.254 261.746 723 238 723C214.254 723 195 742.254 195 766C195 787.461 210.722 805.251 231.282 808.48V778.433H220.361V766H231.282V756.524C231.282 745.748 237.704 739.792 247.524 739.792C252.228 739.792 257.151 740.633 257.151 740.633V751.215H251.726C246.387 751.215 244.718 754.529 244.718 757.933V766H256.642L254.738 778.432H244.718V808.48C265.278 805.257 280.999 787.467 280.999 766L281 766Z"
       fill="#1977F3"
     />
@@ -240,9 +240,9 @@ export const BackgroundSVG = () => (
         width="592.534"
         height="153.492"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -275,9 +275,9 @@ export const BackgroundSVG = () => (
         width="579.001"
         height="154.576"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -310,9 +310,9 @@ export const BackgroundSVG = () => (
         width="653.415"
         height="90.7609"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -345,9 +345,9 @@ export const BackgroundSVG = () => (
         width="694"
         height="98.489"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -380,9 +380,9 @@ export const BackgroundSVG = () => (
         width="575.994"
         height="157.019"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -415,9 +415,9 @@ export const BackgroundSVG = () => (
         width="636.526"
         height="157.512"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -451,10 +451,10 @@ export const BackgroundSVG = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(1252.52 265.742) rotate(-9.53101) scale(139.488 84.6684)"
       >
-        <stop stop-color="#FED576" />
-        <stop offset="0.263" stop-color="#F47133" />
-        <stop offset="0.609" stop-color="#BC3081" />
-        <stop offset="1" stop-color="#4C63D2" />
+        <stop stopColor="#FED576" />
+        <stop offset="0.263" stopColor="#F47133" />
+        <stop offset="0.609" stopColor="#BC3081" />
+        <stop offset="1" stopColor="#4C63D2" />
       </radialGradient>
       <radialGradient
         id="paint1_radial_220_5932"
@@ -464,10 +464,10 @@ export const BackgroundSVG = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(1252.52 265.742) rotate(-9.53102) scale(139.488 84.6684)"
       >
-        <stop stop-color="#FED576" />
-        <stop offset="0.263" stop-color="#F47133" />
-        <stop offset="0.609" stop-color="#BC3081" />
-        <stop offset="1" stop-color="#4C63D2" />
+        <stop stopColor="#FED576" />
+        <stop offset="0.263" stopColor="#F47133" />
+        <stop offset="0.609" stopColor="#BC3081" />
+        <stop offset="1" stopColor="#4C63D2" />
       </radialGradient>
       <radialGradient
         id="paint2_radial_220_5932"
@@ -477,10 +477,10 @@ export const BackgroundSVG = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(1252.52 265.742) rotate(-9.53101) scale(139.488 84.6684)"
       >
-        <stop stop-color="#FED576" />
-        <stop offset="0.263" stop-color="#F47133" />
-        <stop offset="0.609" stop-color="#BC3081" />
-        <stop offset="1" stop-color="#4C63D2" />
+        <stop stopColor="#FED576" />
+        <stop offset="0.263" stopColor="#F47133" />
+        <stop offset="0.609" stopColor="#BC3081" />
+        <stop offset="1" stopColor="#4C63D2" />
       </radialGradient>
       <radialGradient
         id="paint3_radial_220_5932"
@@ -490,8 +490,8 @@ export const BackgroundSVG = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(759.5 570) rotate(90) scale(702.682 936.292)"
       >
-        <stop stop-color="#D9D9D9" stop-opacity="0.2" />
-        <stop offset="0.802083" stop-color="#D9D9D9" stop-opacity="0" />
+        <stop stopColor="#D9D9D9" stopOpacity="0.2" />
+        <stop offset="0.802083" stopColor="#D9D9D9" stopOpacity="0" />
       </radialGradient>
       <image id="image0_220_5932" width="337" height="137" />
     </defs>

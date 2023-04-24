@@ -4,6 +4,10 @@ import { Inter } from "@next/font/google";
 import { Poppins } from "@next/font/google";
 import { Input } from "./input";
 import { Label } from "./label";
+import { type ZodType, z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import clsx from "clsx";
 
 export const fontSans = Poppins({
   subsets: ["latin"],
@@ -20,7 +24,31 @@ interface ModalProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
+type RequestData = {
+  email: string;
+  community: string;
+  twitter: string;
+};
+
 const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
+  const requestSchema: ZodType<RequestData> = z.object({
+    email: z.string().email(),
+    community: z.string().min(2).max(30),
+    twitter: z.string().startsWith("@"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RequestData>({
+    resolver: zodResolver(requestSchema),
+  });
+
+  const handleRequest = (data: RequestData) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Dialog
@@ -45,31 +73,63 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
               possible to get your community set up.
             </Dialog.Description>
             <div className="mt-8 grid w-full items-center gap-1.5 text-slate-500">
-              <Label htmlFor="email-2">Email</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
                 type="email"
-                id="email-2"
+                id="email"
                 placeholder="i@am.com"
-                className="text-slate-100"
+                className={clsx(
+                  "text-slate-100 ",
+                  errors.email && "border-red-500"
+                )}
+                {...register("email")}
               />
+              <p className="text-sm text-red-500">
+                {errors.email && "Invalid email address"}
+              </p>
             </div>
+            <form onSubmit={handleSubmit(handleRequest)}>
+              <div className="mt-4 grid w-full items-center gap-1.5 text-slate-500">
+                <Label htmlFor="community">Community</Label>
+                <Input
+                  type="text"
+                  id="community"
+                  placeholder="Developer Dao"
+                  className={clsx(
+                    "text-slate-100 ",
+                    errors.community && "border-red-500"
+                  )}
+                  {...register("community")}
+                />
+                <p className="text-sm text-red-500">
+                  {errors.community && "Enter a valid Name"}
+                </p>
+              </div>
 
-            <div className="mt-4 grid w-full items-center gap-1.5">
-              <Label htmlFor="email-2">Community</Label>
-              <Input type="email" id="email-2" placeholder="Developer Dao" />
-            </div>
+              <div className="mt-4 grid w-full items-center gap-1.5 text-slate-500">
+                <Label htmlFor="handle">Twitter Handle</Label>
+                <Input
+                  type="text"
+                  id="handle"
+                  placeholder="@"
+                  className={clsx(
+                    "text-slate-100 ",
+                    errors.community && "border-red-500"
+                  )}
+                  {...register("twitter")}
+                />
+                <p className="text-sm text-red-500">
+                  {errors.twitter && "Enter a valid handle"}
+                </p>
+              </div>
 
-            <div className="mt-4 grid w-full items-center gap-1.5">
-              <Label htmlFor="email-2">Twitter Handle</Label>
-              <Input type="email" id="email-2" placeholder="@" />
-            </div>
-
-            <button
-              className={`mt-10 w-full rounded-lg bg-[#BD54C6] py-3 pl-2 pr-2 text-white transition duration-500 delay-75  hover:bg-blue-600 `}
-              onClick={() => setIsOpen(false)}
-            >
-              Request Access
-            </button>
+              <button
+                className={`mt-10 w-full rounded-lg bg-[#BD54C6] py-3 pl-2 pr-2 text-white transition duration-500 delay-75  hover:bg-blue-600 `}
+                type="submit"
+              >
+                Request Access
+              </button>
+            </form>
           </Dialog.Panel>
         </div>
       </Dialog>

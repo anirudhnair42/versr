@@ -1,15 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-// import { signIn, signOut, useSession } from "next-auth/react";
-
-import { trpc } from "../utils/trpc";
 import HeroBanner from "../components/HeroBanner";
 import { Navbar } from "../components/Navbar";
 
 const Home: NextPage = () => {
-  const { data: daos, isLoading } = trpc.daos.getAll.useQuery();
-  const top5Daos = daos?.slice(0, 3);
-
   // Get All Guilds basic information
 
   return (

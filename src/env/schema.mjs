@@ -41,7 +41,7 @@ export const clientSchema = z.object({
  * @type {{ [k in keyof z.infer<typeof clientSchema>]: z.infer<typeof clientSchema>[k] | undefined }}
  */
 export const clientEnv = {
-  NEXT_PUBLIC_MAILCHIMP_U: process.env.NEXT_PUBLIC_MAILCHIMP_U,
-  NEXT_PUBLIC_MAILCHIMP_ID: process.env.NNEXT_PUBLIC_MAILCHIMP_ID,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+  NEXT_PUBLIC_MAILCHIMP_U: process.env.NEXT_PUBLIC_MAILCHIMP_U,
+  NEXT_PUBLIC_MAILCHIMP_ID: process.env.NEXT_PUBLIC_MAILCHIMP_ID,
 };

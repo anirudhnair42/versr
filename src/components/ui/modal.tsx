@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen }) => {
       >
         <div className="fixed inset-0 bg-black/80" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4 ">
-          <Dialog.Panel className="-mt-80 w-full max-w-xl rounded-2xl border-2 border-neutral-600 bg-neutral-900 p-10 text-white ">
+          <Dialog.Panel className=" w-full max-w-xl rounded-2xl border-2 border-neutral-600 bg-neutral-900 p-10 text-white ">
             <Dialog.Title
               className={`${fontSans.className} mb-2 text-center font-sans text-4xl `}
             >

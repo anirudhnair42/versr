@@ -1,5 +1,5 @@
 import { type FC, useEffect, useState } from "react";
-import { BackgroundSVG } from "./ui/grid";
+import { BackgroundSVG } from "../../public/img/grid";
 import Modal from "./ui/modal";
 
 const HeroBanner: FC = () => {
@@ -17,8 +17,8 @@ const HeroBanner: FC = () => {
   return (
     <div>
       <Modal isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
-      <BackgroundSVG />
-      <div className={`z-10 mx-auto mt-40  max-w-3xl `}>
+      {/* <BackgroundSVG /> */}
+      <div className="mx-auto  mt-40 max-w-3xl">
         <div className=" rounded-2xl bg-gradient-to-b from-white to-transparent p-[1px] shadow-[0_25px_100px_rgba(189,84,198,0.1)]">
           <div className="backdrop-blur- flex h-full w-full grow items-center justify-center rounded-2xl bg-neutral-900 backdrop-blur-xl	">
             <div className="flex h-auto max-w-[765px] flex-col items-center justify-center bg-neutral-900 p-20 ">

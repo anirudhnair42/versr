@@ -25,8 +25,8 @@ const Home: NextPage = () => {
         <HeroBanner />
         <div className="mt-40">{/* <HeroIndex /> */}</div>
 
-        <div className="m-10 flex flex-row items-center justify-center gap-4">
-          <div className=" -mt-2 flex h-80 w-1/3 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
+        <div className="mt-40 mb-40 flex flex-row items-center justify-center gap-6">
+          <div className=" flex h-[464px] w-1/3 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
             <div className=" h-full w-full overflow-hidden rounded-xl bg-neutral-900 p-10">
               <div className=" font-sans text-4xl font-black text-white">
                 Your All-in-One
@@ -42,24 +42,38 @@ const Home: NextPage = () => {
                   src="/img/InfoCards.png"
                   height={1600}
                   width={1000}
-                  className="w-max"
+                  className="mt-20 scale-150"
                   alt="logos"
                 />
               </div>
             </div>
           </div>
-          <div className="flex w-1/3 flex-col justify-between gap-2 ">
-            <div className=" flex h-40 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
+          <div className="flex w-1/3 flex-col justify-between gap-6 ">
+            <div className=" flex h-[220px] flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
               <div className=" justify-left flex h-full w-full flex-row items-center rounded-xl bg-neutral-900">
                 <div className=" ml-8 font-sans text-2xl font-black text-white">
                   Curate your DAO’s information using our customizable UI to
                   tell your DAOs story
                 </div>
+                <Image
+                  src="/img/BoxGroup.png"
+                  height={200}
+                  width={200}
+                  className="h-full"
+                  alt="logos"
+                />
               </div>
             </div>
-            <div className=" flex h-40 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
+            <div className=" flex h-[220px] flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
               <div className=" justify-left flex h-full w-full flex-row items-center rounded-xl bg-neutral-900">
-                <div className="ml-16 mr-8 text-right font-sans text-2xl font-black text-white">
+                <Image
+                  src="/img/MediaStack.png"
+                  height={100}
+                  width={140}
+                  className="float-left ml-4"
+                  alt="logos"
+                />
+                <div className="mr-4 text-right font-sans text-2xl font-black text-white">
                   Aggregate, curate and gate your content from different
                   platforms like Twitter & Lens
                 </div>
@@ -68,7 +82,6 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div
-          className="my-20 flex items-center justify-center text-center font-sans text-5xl text-white"
           style={{
             backgroundImage: "url('/img/plugins.png')",
             backgroundSize: "contain",
@@ -76,39 +89,56 @@ const Home: NextPage = () => {
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
           }}
+          className="mb-20 mt-4"
         >
-          <div className="flex w-3/5 flex-col items-center justify-center  text-center">
-            Build a multi-dimensional community with our easy to use
-            <div className="mt-4 font-sans text-5xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:scale-125 hover:text-blue-600 ">
-              Plugins
-            </div>
-            <div className="mt-8 w-4/5 text-center font-inter text-base leading-relaxed text-slate-500">
-              Grow your community using our easy to use plugin apps powered by
-              our web3 developer ecosystem. Enjoy a wide range of tools that
-              enable governance, treasury management, analytics, and much more
+          <div className="flex items-center justify-center bg-gradient-to-b from-neutral-900 via-transparent to-neutral-900 py-20 text-center font-sans text-5xl text-white">
+            <div className="flex w-3/5 flex-col items-center justify-center  text-center">
+              Build a multi-dimensional community with our easy to use
+              <div className="mt-4 font-sans text-5xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:scale-125 hover:text-blue-600 ">
+                Plugins
+              </div>
+              <div className="mt-8 w-4/5 text-center font-inter text-base leading-relaxed text-slate-500">
+                Grow your community using our easy to use plugin apps powered by
+                our web3 developer ecosystem. Enjoy a wide range of tools that
+                enable governance, treasury management, analytics, and much more
+              </div>
             </div>
           </div>
         </div>
-        <div className="m-10 flex flex-row items-center justify-center gap-4">
-          <div className="flex w-1/3 flex-col justify-between gap-2 ">
-            <div className=" flex h-40 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
+        <div className="m-10 flex flex-row items-center justify-center gap-6">
+          <div className="flex w-1/3 flex-col justify-between gap-6 ">
+            <div className=" flex h-[220px] flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
               <div className=" justify-left flex h-full w-full flex-row items-center rounded-xl bg-neutral-900">
-                <div className=" ml-8 font-sans text-2xl font-black text-white">
+                <div className="ml-8 mr-2 font-sans text-2xl font-black text-white">
                   Find exciting DAOs, opportunities, and events that spark your
                   interest
                 </div>
+                <Image
+                  src="/img/FindStack.png"
+                  height={90}
+                  width={125}
+                  className="mr-8 scale-125"
+                  alt="logos"
+                />
               </div>
             </div>
-            <div className=" flex h-40 flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
+            <div className=" flex h-[220px] flex-row rounded-xl  bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl">
               <div className=" justify-left flex h-full w-full flex-row items-center rounded-xl bg-neutral-900">
-                <div className="ml-16 mr-8 text-right font-sans text-2xl font-black text-white">
+                <Image
+                  src="/img/NotifCard.png"
+                  height={100}
+                  width={100}
+                  className="ml-12 scale-125"
+                  alt="logos"
+                />
+                <div className="ml-8 mr-8 text-right font-sans text-2xl font-black text-white">
                   Receive personalized updates on the DAOs you care most about
                   with our weekly digest
                 </div>
               </div>
             </div>
           </div>
-          <div className=" -mt-2 flex h-80 w-1/3 flex-row overflow-hidden  rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl ">
+          <div className=" flex h-[464px] w-1/3 flex-row overflow-hidden  rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 p-[1px] shadow-xl ">
             <div className=" h-full w-full rounded-xl bg-neutral-900 p-10">
               <div className="flex flex-row">
                 <div className="mr-2 font-sans text-4xl font-black text-white">
@@ -128,7 +158,7 @@ const Home: NextPage = () => {
                 src="/img/DaoCards.png"
                 height={500}
                 width={1000}
-                className="ml-40"
+                className="ml-40 mt-40 scale-150"
                 alt="logos"
               />
             </div>

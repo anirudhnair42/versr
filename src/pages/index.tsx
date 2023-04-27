@@ -98,7 +98,7 @@ const Home: NextPage = () => {
             <div className=" flex items-center justify-center bg-gradient-to-b from-neutral-900 via-transparent to-neutral-900 py-20 text-center font-sans text-white">
               <div className="mx-4 flex flex-col items-center justify-center text-center text-4xl md:w-3/5 md:text-5xl">
                 Build a multi-dimensional community with our easy to use
-                <div className="mt-4 font-sans text-5xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:scale-125 hover:text-blue-600 ">
+                <div className="mt-4 font-sans text-5xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:text-blue-600 md:hover:scale-125 ">
                   Plugins
                 </div>
                 <div className="mt-8 w-4/5 text-center font-inter text-sm leading-relaxed text-slate-500 md:text-base">
@@ -149,7 +149,7 @@ const Home: NextPage = () => {
                   <div className="mr-2 font-sans text-4xl font-black text-white">
                     Discover
                   </div>
-                  <div className="  font-sans text-4xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:scale-125 hover:text-blue-600 ">
+                  <div className="  font-sans text-4xl font-black text-[#BD54C6] drop-shadow-glow  transition duration-500 delay-75 hover:text-blue-600 md:hover:scale-125 ">
                     DAOs
                   </div>
                 </div>
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
             <div className="mb-10">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className=" rounded-lg border-2 border-neutral-400 bg-[#BD54C6]  py-3 px-4 text-white transition duration-500 delay-75 hover:scale-125 hover:bg-blue-600 hover:drop-shadow-glowLight "
+                className=" rounded-lg border-2 border-neutral-400 bg-[#BD54C6]  py-3 px-4 text-white transition duration-500 delay-75 hover:bg-blue-600 md:hover:scale-125 md:hover:drop-shadow-glowLight "
               >
                 Request Access
               </button>
